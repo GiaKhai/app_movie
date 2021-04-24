@@ -2,7 +2,6 @@
 
 import React, { useReducer, useEffect } from "react";
 import "../App.css";
-import Header from "./header";
 import Movie from "./movie";
 import Search from "./search";
 
@@ -79,19 +78,19 @@ const SearchMovie = () => {
 
   return (
     <div className="App">
-      <Header text="MOVIES" />
-      <Search search={search} />
-      <h2>Trending movies</h2>
-      <div className="movies">
-        {loading && !errorMessage ? (
-          <span>Loading... </span>
-        ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
-        ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
-          ))
-        )}
+      <div className="search-movie">
+        <Search search={search} />
+        <div className="movies">
+          {loading && !errorMessage ? (
+            <span>Loading... </span>
+          ) : errorMessage ? (
+            <div className="errorMessage">{errorMessage}</div>
+          ) : (
+            movies.map((movie, index) => (
+              <Movie key={`${index}-${movie.Title}`} movie={movie} />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

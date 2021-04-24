@@ -1,6 +1,5 @@
 /** @format */
 
-import Header from "./header";
 import axios from "axios";
 import Movie from "./movie";
 import { useEffect, useState } from "react";
@@ -26,48 +25,51 @@ const Home = () => {
   console.log(movies);
   return (
     <div>
-      <Header />
-      <div className="banner">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="..." className="d-block w-100" alt="..." />
+      <div className="home">
+        <div className="banner">
+          <div
+            id="carouselExampleControls"
+            className="carousel slide"
+            data-ride="carousel"
+          >
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src="https://img4.goodfon.ru/wallpaper/nbig/e/4f/poster-komiks-thor-ragnarok-marvel-personazhi-tor-ragnariok.jpg"
+                  alt="banner"
+                />{" "}
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://posterspy.com/wp-content/uploads/2018/01/cap-trilogy-ricojr-rvb.png"
+                  alt="banner"
+                />{" "}
+              </div>
+              <div className="carousel-item">
+                <img src="https://i.redd.it/ie79r52m3c531.jpg" alt="banner" />{" "}
+              </div>
             </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-            </div>
+            <a
+              className="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span className="carousel-control-prev-icon" aria-hidden="true" />
+              <span className="sr-only">Previous</span>
+            </a>
+            <a
+              className="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span className="carousel-control-next-icon" aria-hidden="true" />
+              <span className="sr-only">Next</span>
+            </a>
           </div>
-          <a
-            className="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
-            <span className="sr-only">Previous</span>
-          </a>
-          <a
-            className="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true" />
-            <span className="sr-only">Next</span>
-          </a>
         </div>
-        <img
-          src="https://c.wallhere.com/photos/47/02/Thor_movies_poster_movie_poster_Marvel_Comics_Marvel_Cinematic_Universe_Thor_Ragnarok_Mjolnir-1265805.jpg!d"
-          alt="banner"
-        />
-        <div>Movie Trending</div>
+        <h2>Movie Trending</h2>
         {movies && movies.map((mv, index) => <Movie key={index} movie={mv} />)}
       </div>
     </div>
