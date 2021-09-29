@@ -26,8 +26,15 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2-beta
+        with:
+              node-version: '16'
+              
+      - name: build project
+        run: |
+          yarn install
+          yarn build
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
